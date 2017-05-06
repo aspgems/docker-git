@@ -10,13 +10,18 @@ achieve this by providing dockerized git command
 You can use this container by running the following command fron the root of your application
 
 ```bash
-docker run --rm -it -v $(pwd):/repo -v ~/.ssh/id_rsa:/root/.ssh/id_rsa aspgems/git
+docker run --rm -v $(pwd):/repo -v ~/.ssh/id_rsa:/root/.ssh/id_rsa aspgems/git
 ```
 
 If you want, for example, clone a repo, you should do something like the following
 
 ```bash
-docker run --rm -it -v $(pwd):/repo -v ~/.ssh/id_rsa:/root/.ssh/id_rsa aspgems/git clone <your_repo_url>
+docker run --rm -v $(pwd):/repo -v ~/.ssh/id_rsa:/root/.ssh/id_rsa aspgems/git clone <your_repo_url>
+```
+
+### Adding yuor own .gitconfig
+```bash
+docker run --rm -v $(pwd):/repo -v ~/.ssh/id_rsa:/root/.ssh/id_rsa -v ~/.gitconfig:/root/.gitconfig aspgems/git
 ```
 
 **Configuring your public key:** This assumes that your id_rsa file resides in
