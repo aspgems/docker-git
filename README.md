@@ -1,0 +1,2 @@
+# docker-git
+Dockerized git
